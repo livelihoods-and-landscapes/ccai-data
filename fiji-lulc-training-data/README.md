@@ -20,7 +20,7 @@ The `class` property associated with each `POINT` feature stores the point's cla
 ### Data Availability
 
 * [Pacific Data Hub](https://pacificdata.org/data/dataset/fiji-land-use-land-cover-labels) - GeoJSON file and .qml file for styling in QGIS. 
-* [GitHub]() - GeoJSON file, .qml for styling in QGIS, and .qgz project for visualising data in QGIS.
+* [GitHub](https://github.com/livelihoods-and-landscapes/ccai-data/tree/main/fiji-lulc-training-data) - GeoJSON file, .qml for styling in QGIS, and .qgz project for visualising data in QGIS.
 
 ### Class definitions
 
