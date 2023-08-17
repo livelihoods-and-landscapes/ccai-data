@@ -8,7 +8,7 @@ Each of the point geometries was assigned one of the following class labels:
 
 1. water
 2. mangrove
-3. bare soil
+3. bare soil / rock
 4. urban / impervious
 5. cropland / agriculture
 6. grassland
@@ -17,10 +17,15 @@ Each of the point geometries was assigned one of the following class labels:
 
 The `class` property associated with each `POINT` feature stores the point's class label.
 
-### Data Availability
+## Data Availability
 
 * [Pacific Data Hub](https://pacificdata.org/data/dataset/fiji-land-use-land-cover-labels) - GeoJSON file and .qml file for styling in QGIS. 
 * [GitHub](https://github.com/livelihoods-and-landscapes/ccai-data/tree/main/fiji-lulc-training-data) - GeoJSON file, .qml for styling in QGIS, and .qgz project for visualising data in QGIS.
+* Google Earth Engine asset at: `projects/ccai-fiji-public/assets/ground-truth-samples-s2cloudless-cluster-v1`
+
+## Example use
+
+`fiji-lulc-training-data.js` is a Google Earth Engine script that demonstrates how this data can be used to implement spatial cross validation for hyperparameter tuning to develop a random forests LULC classifier for Fiji. 
 
 ### Class definitions
 
@@ -49,3 +54,4 @@ Feature definitions:
 * `elevation` - elevation computed from SRTM
 * `aspect` - aspect computed from SRTM
 * `slope` - slope computed from SRTM
+* `cluser` - spatial cluster within each Tikina (useful for spatial cross validation)
