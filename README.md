@@ -2,7 +2,31 @@
 
 Overview of data and software outputs from a Climate Change AI Innovation Grant project focusing on flood detection and land cover mapping in Fiji.
 
+## Fiji ImageStacks
+
+Multiband raster images for each Tikina in Fiji using Sentinel-2 L2A surface reflectance remote sensing data, the S2Cloudless cloud masking product, and SRTM topography data. This processed remote sensing data can be used for various applications such as land use and land cover (LULC) mapping, change detection, and vegetation condition monitoring. 
+
+This dataset is available on Google Earth Engine. 
+
+Resources to access this data and examples for use can be found in `/s2-image-stacks`. 
+
+
+## Fiji LULC Maps
+
+Annual land use and land cover (LULC) maps for all-Fiji at a 10 m spatial resolution for 2019, 2020, 2021, and 2022. The maps are generated using a machine learning workflow applied to Sentinel-2 L2A surface reflectance data and SRTM topography data. 
+
+This dataset is available on the Pacific Data Hub, Google Earth Engine, and a custom web map viewer and download portal.
+
+Resources to access this data and examples for use can be found in `/fiji-lulc-maps`. 
+
+
 ## Fiji LULC Training Data
+
+A dataset of 13,914 points across Fiji with a land use land cover (LULC) label and several predictor variables derived from Sentinel-2 L2A surface reflectance data and SRTM topography data. 
+
+This dataset is available on the Pacific Data Hub, Google Earth Engine, and as GeoJSON file in this repository. 
+
+Resources to access this data and examples for use can be found in `/fiji-lulc-training-data`. 
 
 ##  Tropical and Sub-Tropical Flood Masks
 
