@@ -58,3 +58,7 @@ The data is available for download from the [Pacific Data Hub](pacificdata.org/d
 The dataset are available on the [Pacific Data Hub](https://pacificdata.org/data/dataset/fiji-flood-masks).
 
 Resources to access this data can be found in `/fiji-flood-masks`. 
+
+## STARFM
+
+Python implementation of [STARFM image fusion algorithm](https://data.nal.usda.gov/dataset/starfm).
