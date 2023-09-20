@@ -50,15 +50,16 @@ var afterFiltered = ee.Image(toDB(RefinedLee(toNatural(after))));
 var difference = afterFiltered.divide(beforeFiltered);
 
 // Define a threshold
-var diffThreshold = 1.25;
+var diffThreshold = 1.5;
 // Initial estimate of flooded pixels
 var flooded = difference.gt(diffThreshold).rename('water').selfMask();
 
-Map.centerObject(geometry, 12);
+Map.centerObject(geometry, 14);
 Map.addLayer(before, {min:-25,max:0}, 'Before Floods', false);
 Map.addLayer(after, {min:-25,max:0}, 'After Floods', false); 
 Map.addLayer(beforeFiltered, {min:-25,max:0}, 'Before Filtered', false);
 Map.addLayer(afterFiltered, {min:-25,max:0}, 'After Filtered', false); 
+Map.addLayer(difference, {min:-2,max:2}, 'Difference', false); 
 Map.addLayer(flooded, {min:0, max:1, palette: ['orange']}, 'Initial Flood Area', false);
 
 
@@ -82,9 +83,9 @@ Map.addLayer(steepAreas.selfMask(), {min:0, max:1, palette: ['cyan']}, 'Steep Ar
 var flooded = flooded.updateMask(slopeMask);
 
 // Remove isolated pixels
-// connectedPixelCount is Zoom dependent, so visual result will vary
+// reproject to make connectedPixelCount not zoom dependent
 var connectedPixelThreshold = 8;
-var connections = flooded.connectedPixelCount(25);
+var connections = flooded.connectedPixelCount(50).reproject('EPSG:4326', null, 10);
 var disconnectedAreas = connections.lt(connectedPixelThreshold);
 var disconnectedAreasMask = disconnectedAreas.not();
 Map.addLayer(disconnectedAreas.selfMask(), {min:0, max:1, palette: ['yellow']}, 'Disconnected Areas', false);
